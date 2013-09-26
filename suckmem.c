@@ -6,7 +6,14 @@
  * Copyright (c) by Zex Li <top_zlynch@yahoo.com>, Hytera Communications Co., Ltd.
  *
  * Sample command to load the module
- * 	insmod suckmem.ko 
+ *	mknod /dev/suckmem 60 0
+ * 	insmod suckmem.ko
+ *	echo runaway > /dev/suckmem
+ *	dmesg|tail
+ *	cat /dev/suckmem
+ *	dmesg|tail
+ *	rmmod suckmem
+ *	dmesg|tail
  */
 #include <linux/init.h>
 #include <linux/module.h>
